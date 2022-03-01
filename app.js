@@ -52,7 +52,6 @@ app.use(indexRoutes);
 
 
 
-
 // Tell Express to Listen request
 app.listen(port, () => {
     console.log(`Server has started at http://localhost:${port}`);

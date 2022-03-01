@@ -10,7 +10,8 @@ const Wallet               = require("./models/wallet");
 const Comment              = require("./models/comment");
 const User                 = require("./models/user");
 const seedingDB            = require("./seeds");
-const port                 = 3000;
+const port     = process.env.PORT || 8000;
+
 
 //Requring Routes
 const walletRoutes  = require("./routes/wallets");

@@ -1,0 +1,60 @@
+<%-  include ('../partials/header');  -%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Wallet</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail" id="yes">
+                <img class="img-responsive" src="<%= found.img %>" alt="" srcset="">
+                <div class="caption-full">
+                    <h4 class="pull-right">$<%= found.price %></h4>
+                    <h3><a> <%= found.name %> </a></h3>
+                    <p><%= found.description %></p>
+                    <p><em>Submitted By: <b><%= found.author.username %></b></em></p>
+                    <% if(currentUser && found.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-warning" href="/wallets/<%=found._id%>/edit">Edit</a>
+                        <form id="delete-form" action="/wallets/<%=found._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    <% } %>
+                </div> 
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/wallets/<%= found._id %>/comments/new">Leave Review</a>
+                </div>
+                <hr>
+                <% found.comments.forEach(function(comnt){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comnt.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+                                <%= comnt.text %>
+                            </p>
+                            <% if(currentUser && comnt.author.id.equals(currentUser._id)){ %>
+                                <a class="btn btn-xs btn-warning" href="/wallets/<%=found._id%>/comments/<%=comnt._id%>/edit">Edit</a>
+                                <form id="delete-form" action="/wallets/<%=found._id%>/comments/<%=comnt._id%>?_method=DELETE" method="POST">
+                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%-  include ('../partials/footer');  -%>

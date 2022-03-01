@@ -1,0 +1,37 @@
+<%-  include ('../partials/header');  -%>
+
+<div class="container">
+    <header class="jumbotron"> 
+        <div class="container">
+            <h1>Welcome to Hello_Wallets</h1>
+            <p>View our wallets collections all over the world</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/wallets/new">Add New Wallet</a>
+            </p>
+        </div>   
+    </header>
+    
+   <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+       <% data.forEach((camp) => {  %>
+          <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= camp.img %>">
+                <div class="caption">
+                    <h4><%= camp.name %></h4>
+                </div>
+                <p>
+                    <a href="/wallets/<%= camp._id %>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>     
+          </div>
+       <%  }); %>
+   </div>   
+
+   <br>
+   <a href="/">Back to Home</a>
+   
+   <br><br><br><br>
+</div>
+
+
+<%-  include ('../partials/footer');  -%>

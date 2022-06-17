@@ -80,7 +80,7 @@ router.put("/wallets/:id", middleware.checkWalletOwnership, (req, res) => {
             res.redirect("/wallets");
         }
         else
-        {
+        {   console.log(updatedWallet);
             req.flash("success", "Wallet Updated!");
             res.redirect("/wallets/" + req.params.id);
         }

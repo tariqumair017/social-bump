@@ -19,6 +19,11 @@ router.get("/wallets", (req, res) => {
     });
 });
 
+//New - Show form to create new wallet 
+router.get("/wallets/new", middleware.isLoggedin, (req, res) => {
+    res.render("wallets/new");
+});
+
 //Create - Add new Wallet to DB
 router.post("/wallets", middleware.isLoggedin, (req, res) => {
     let naam = req.body.name;
@@ -31,23 +36,30 @@ router.post("/wallets", middleware.isLoggedin, (req, res) => {
     }
     let newWallet = {name: naam, img: image, price: price, description: desc, author: currentAuthor};
     //Create a new wallet and save to DB
-    Wallet.create(newWallet, (err, new_wallet) => {
-        if(err)
+    Wallet.findOne({$or:[{name:naam}, {img:image}]}, function(err, gola){
+        if(gola)
         {
-            console.log(err);
+            console.log("Already Exist");
+            req.flash("error", "Wallet with same Name or Image is Already Exist!");
+            return res.redirect("wallets/new");
         }
         else
         {
-            req.flash("success", "New Wallet is Created Successfully!");
-            res.redirect("/wallets");
+            Wallet.create(newWallet, (err, new_wallet) => {
+                if(err)
+                {
+                    console.log(err);
+                }
+                else
+                {
+                    req.flash("success", "New Wallet is Created Successfully!");
+                    res.redirect("/wallets");
+                }
+            });
         }
     });
 });
 
-//New - Show form to create new wallet 
-router.get("/wallets/new", middleware.isLoggedin, (req, res) => {
-    res.render("wallets/new");
-});
 
 //Show - Show more info about one wallet
 router.get("/wallets/:id", (req, res) => {

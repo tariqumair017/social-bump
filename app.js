@@ -18,8 +18,8 @@ const walletRoutes  = require("./routes/wallets");
 const commentRoutes = require("./routes/comments");
 const indexRoutes   = require("./routes/index");
 
-//mongoose.connect("mongodb://localhost:27017/h_wallet");
-mongoose.connect("mongodb+srv://umair:ZtTyXSpZRWs0BwxU@cluster0.bxdwo.mongodb.net/hellowallet?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost:27017/h_wallet");
+// mongoose.connect("mongodb+srv://umair:ZtTyXSpZRWs0BwxU@cluster0.bxdwo.mongodb.net/hellowallet?retryWrites=true&w=majority");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));

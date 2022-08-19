@@ -3,29 +3,74 @@
 <div class="container">
     <div class="row">
         <h1 style="text-align: center;">Add a New Wallet Here</h1>
+        <br>
+     <div style="text-align: center; color: red;">
+        <span id="arr"></span>
+     </div>
 
      <div style="width: 30%; margin: 25px auto;">
-        <form action="/wallets" method="post">
+        <form onsubmit="return myFun();" action="/wallets" method="post">
             <div class="form-group">
-                <input class="form-control" type="text" name="name" placeholder="About wallet" required>
+                <input class="form-control" type="text" id="name-id" name="name" placeholder="Wallet name">
             </div>
             <div class="form-group">
-                <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01" required>
+                <input class="form-control" type="number" id="price-id" name="price" placeholder="price" min="0.01" step="0.01">
             </div>     
             <div class="form-group">
-                <input class="form-control" type="text" name="image" placeholder="image url" required>
+                <input class="form-control" type="text" id="image-id" name="image" placeholder="image url">
             </div>   
             <div class="form-group">
-                <input class="form-control" type="text" name="description" placeholder="description" required>
+                <input class="form-control" type="text" id="desc-id" name="description" placeholder="description">
             </div>       
             <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block">Add</button>
+                <!-- <button class="btn btn-lg btn-primary btn-block" id="buttonid" >Add</button> -->
+                <input type="submit" id="sub-id" value="Add" class="btn btn-lg btn-primary btn-block">
             </div>           
         </form>
     <a href="/wallets">Go Back</a>
       </div>
     </div>
 </div>
+
+
+<!-- <script type = "text/javascript" language = "javascript">
+    const button = document.getElementById('buttonid');
+    button.addEventListener("click", function() {
+        this.form.submit();
+    }, {once : true});
+</script> -->
+<script>
+    function myFun()
+        {
+            var name = document.getElementById("name-id").value;
+            var price = document.getElementById("price-id").value;
+            var image = document.getElementById("image-id").value;
+            var desc = document.getElementById("desc-id").value;
+
+            if(name == "")
+            {
+                document.getElementById("arr").innerHTML="** Please fill Name";
+                return false;
+            }
+            if(price == "")
+            {
+                document.getElementById("arr").innerHTML="** Please fill Price";
+                return false;
+            }
+            if(image == "")
+            {
+                document.getElementById("arr").innerHTML="** Please put image Url";
+                return false;
+            }
+            if(desc == "")
+            {
+                document.getElementById("arr").innerHTML="** Please fill description";
+                return false;
+            }
+        }
+
+  
+</script>
 
 
 

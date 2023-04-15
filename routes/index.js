@@ -1,6 +1,7 @@
 const express  = require("express");
 const router   = express.Router();
 const passport = require("passport");
+const asyncHandler = require("express-async-handler");  
 const User     = require("../models/user");
 
 //Root Route
@@ -17,7 +18,7 @@ router.get("/register", (req, res)=> {
     res.render("register");
 });
 //Handel Sign Up Logic
-router.post("/register", (req, res)=> {
+router.post("/register", asyncHandler (async (req, res)=> {
     let newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, (err, user) => {
         if(err)
@@ -30,7 +31,7 @@ router.post("/register", (req, res)=> {
            res.redirect("/wallets");
        });
     });
-});
+}));
 
 //Show Login form
 router.get("/login", (req, res)=> {

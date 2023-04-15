@@ -1,77 +1,55 @@
-<%-  include ('../partials/header'); -%>
+ <% layout('layouts/boilerPlate') %>
 
-<div class="container">
-    <div class="row">
-        <h1 style="text-align: center;">Add a New Wallet Here</h1>
-        <br>
-     <div style="text-align: center; color: red;">
-        <span id="arr"></span>
-     </div>
-
-     <div style="width: 30%; margin: 25px auto;">
-        <form onsubmit="return myFun();" action="/wallets" method="post">
-            <div class="form-group">
-                <input class="form-control" type="text" id="name-id" name="name" placeholder="Wallet name">
+<div class="container w-50">
+    <div class="row g-3">
+        <h1 class="">Add New Wallet</h1> 
+        <form class="validation-form" novalidate action="/wallets" method="post" enctype="multipart/form-data">
+            <div class="form-group mb-2">
+                <label for="name-id" class="form-label"><b>Wallet Name</b></label>
+                <input class="form-control" type="text" id="name-id" name="data[name]" placeholder="Wallet name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="number" id="price-id" name="price" placeholder="price" min="0.01" step="0.01">
+            <div class="form-group mb-2">
+                <label for="location-id" class="form-label"><b>Location</b></label>
+                <input class="form-control" type="text" id="location-id" name="data[location]" placeholder="Your Location" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="form-group mb-2">
+                <label for="price-id" class="form-label"><b>Price</b></label>
+                <input class="form-control" type="number" id="price-id" name="data[price]" placeholder="price" min="0.1" step="0.1" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>     
-            <div class="form-group">
-                <input class="form-control" type="text" id="image-id" name="image" placeholder="image url">
-            </div>   
-            <div class="form-group">
-                <input class="form-control" type="text" id="desc-id" name="description" placeholder="description">
-            </div>       
-            <div class="form-group">
-                <!-- <button class="btn btn-lg btn-primary btn-block" id="buttonid" >Add</button> -->
-                <input type="submit" id="sub-id" value="Add" class="btn btn-lg btn-primary btn-block">
+            <div class="form-group mb-2">
+                <label for="desc-id" class="form-label"><b>Description</b></label>
+                <textarea class="form-control" name="data[description]" id="desc-id" cols="21" rows="3" placeholder="description" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <!-- <input class="form-control" type="text" id="desc-id" name="wallet[description]" placeholder="description"> -->
+            </div>  
+            <div class="form-group mb-2">
+                <label for="" class="form-label"><b>Add multiple Images</b></label>
+                <div class="input-group custom-file">
+                    <input class="form-control" type="file" id="imageID" name="img" multiple required> 
+                    <label for="imageID" class="input-group-text">
+                        <span class="custom-file-label"></span> 
+                    </label> 
+                </div> 
+            </div>     
+            <div class="form-group mb-3 mt-3">
+                <input type="submit" value="Add" class="btn btn-success">
+                <a class="btn btn-danger" href="/wallets">Go Back</a>
             </div>           
-        </form>
-    <a href="/wallets">Go Back</a>
-      </div>
+        </form> 
     </div>
 </div>
 
 
-<!-- <script type = "text/javascript" language = "javascript">
-    const button = document.getElementById('buttonid');
-    button.addEventListener("click", function() {
-        this.form.submit();
-    }, {once : true});
-</script> -->
-<script>
-    function myFun()
-        {
-            var name = document.getElementById("name-id").value;
-            var price = document.getElementById("price-id").value;
-            var image = document.getElementById("image-id").value;
-            var desc = document.getElementById("desc-id").value;
 
-            if(name == "")
-            {
-                document.getElementById("arr").innerHTML="** Please fill Name";
-                return false;
-            }
-            if(price == "")
-            {
-                document.getElementById("arr").innerHTML="** Please fill Price";
-                return false;
-            }
-            if(image == "")
-            {
-                document.getElementById("arr").innerHTML="** Please put image Url";
-                return false;
-            }
-            if(desc == "")
-            {
-                document.getElementById("arr").innerHTML="** Please fill description";
-                return false;
-            }
-        }
-
-  
-</script>
-
-
-
-<%-  include ('../partials/footer');  -%>
+ 

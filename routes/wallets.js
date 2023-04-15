@@ -1,118 +1,33 @@
-const { Console } = require("console");
 const express = require("express");
 const router = express.Router();
-const Wallet    = require("../models/wallet");
-const middleware = require("../middleware/index");
+const wallets = require("../controllers/wallets");
+const asyncHandler = require("express-async-handler");   
+const middleware = require("../middleware/index"); 
 
+const { storage } = require("../cloudinary-config");
+const multer  = require('multer')
+const upload = multer({ storage })
 
 //Index - Show all Wallets from DB
-router.get("/wallets", (req, res) => {
-    Wallet.find({}, (err, allWallets) => {
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        {
-            res.render("wallets/index", {data: allWallets});
-        }
-    });
-});
+router.get("/", asyncHandler(wallets.index));
 
 //New - Show form to create new wallet 
-router.get("/wallets/new", middleware.isLoggedin, (req, res) => {
-    res.render("wallets/new");
-});
+router.get("/new", middleware.isLoggedin, wallets.newWallet);
 
 //Create - Add new Wallet to DB
-router.post("/wallets", middleware.isLoggedin, (req, res) => {
-    let naam = req.body.name;
-    let price = req.body.price;
-    let image = req.body.image;
-    let desc = req.body.description;
-    let currentAuthor = {
-        id: req.user._id,
-        username: req.user.username
-    }
-    let newWallet = {name: naam, img: image, price: price, description: desc, author: currentAuthor};
-    //Create a new wallet and save to DB
-    Wallet.findOne({$or:[{name:naam}, {img:image}]}, function(err, gola){
-        if(gola)
-        {
-            console.log("Already Exist");
-            req.flash("error", "Wallet with same Name or Image is Already Exist!");
-            return res.redirect("wallets/new");
-        }
-        else
-        {
-            Wallet.create(newWallet, (err, new_wallet) => {
-                if(err)
-                {
-                    console.log(err);
-                }
-                else
-                {
-                    req.flash("success", "New Wallet is Created Successfully!");
-                    res.redirect("/wallets");
-                }
-            });
-        }
-    });
-});
-
+router.post("/", middleware.isLoggedin, upload.array('img'), middleware.validateWallet, asyncHandler(wallets.newWalletHandle));
 
 //Show - Show more info about one wallet
-router.get("/wallets/:id", (req, res) => {
-    //find the wallet with provided ID
-    Wallet.findById(req.params.id).populate("comments").exec((err, foundwallet) => {
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        { 
-            res.render("wallets/show", {found: foundwallet});
-        }
-    });
-});
+router.get("/:id", asyncHandler (wallets.showSingleWallet));
 
 //Edit - Edit Wallet Route
-router.get("/wallets/:id/edit", middleware.checkWalletOwnership, (req, res) => {  
-    Wallet.findById(req.params.id, (err, foundWallet) => {
-            res.render("wallets/edit", {fwallet: foundWallet});     
-        });
-});
+router.get("/:id/edit", middleware.checkWalletOwnership, asyncHandler (wallets.editWallet));
 
 //Update - Update Wallet Route
-router.put("/wallets/:id", middleware.checkWalletOwnership, (req, res) => {
-    //find and update the correct wallet
-    Wallet.findByIdAndUpdate(req.params.id, req.body.data, (err, updatedWallet) => {
-        if(err)
-        {
-            res.redirect("/wallets");
-        }
-        else
-        {   console.log(updatedWallet);
-            req.flash("success", "Wallet Updated!");
-            res.redirect("/wallets/" + req.params.id);
-        }
-    });
-});
+router.put("/:id", middleware.checkWalletOwnership, upload.array('img'), middleware.validateWallet, asyncHandler (wallets.updateWallet));
 
 //Destroy - Destroy Wallet Route
-router.delete("/wallets/:id", middleware.checkWalletOwnership, (req, res) => {
-    Wallet.findByIdAndRemove(req.params.id, (err) => {
-        if(err)
-        {
-            res.redirect("/wallets");
-        }
-        else
-        {
-            req.flash("success", "Wallet Deleted Successfully!");
-            res.redirect("/wallets");
-        }
-    });
-});
+router.delete("/:id", middleware.checkWalletOwnership, asyncHandler (wallets.destroyWallet));
 
 
 

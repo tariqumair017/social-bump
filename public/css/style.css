@@ -118,6 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   #header h2 {
     font-size: 20px;
     line-height: 30px;
+    text-align: center;
   }
   #header .social-links {
     margin-top: 15px;
@@ -147,8 +148,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 36px;
 }
 #header.header-top h1 img { 
-  height: 65px;
-  width: 72px;
+  height: 60px;
+  width: 68px;
 }
 
 #header.header-top .container {

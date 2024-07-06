@@ -39,11 +39,9 @@
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="container">
-
-      <!-- <h1><a href="index.html">Emily Jones</a></h1> -->
+ 
       <h1><img src="/img/logos/logo11.png" alt=""></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="mr-auto"><img src="/img/logo.png" alt="" class="img-fluid"></a> -->
+      
       <h2 class="mt-1"><b>WE ARE THRILLED TO HELP YOU WITH</b> <b style="color: #efc016; font-weight: 700;">SOCIAL MEDIA MARKETING</b></h2>
       <h2 class="mb-0 mt-2"><b>DIGITAL MARKETING AGENCY FOR YOUR BUISENSS GROWTH</b></h2>
       <!-- <h5 class="">and excited to help you reach your advertising goals.</h5> -->
@@ -56,7 +54,7 @@
           <li><a class="nav-link" href="#services">Services</a></li>
           <!-- <li><a class="nav-link" href="#portfolio">Projects</a></li> -->
           <li><a class="nav-link" href="#review">Testimonials</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" id="nav-link-contact" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -213,91 +211,7 @@
 
       </div>
 
-    </div><!-- End Skills -->
-
-    <!-- ======= Interests ======= -->
-    <!-- <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line" style="color: #ffbb2c;"></i>
-            <h3>Lorem Ipsum</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-            <h3>Dolor Sitema</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-            <h3>Sed perspiciatis</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-            <h3>Magni Dolores</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-database-2-line" style="color: #47aeff;"></i>
-            <h3>Nemo Enim</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-            <h3>Eiusmod Tempor</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-            <h3>Midela Teren</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-            <h3>Pira Neve</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-anchor-line" style="color: #b2904f;"></i>
-            <h3>Dirada Pack</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-disc-line" style="color: #b20969;"></i>
-            <h3>Moton Ideal</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-base-station-line" style="color: #ff5828;"></i>
-            <h3>Verdo Park</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-            <h3>Flavor Nivelanda</h3>
-          </div>
-        </div>
-      </div>
-
-    </div>End Interests -->
+    </div><!-- End Skills --> 
  
   </section><!-- End About Section -->
 
@@ -354,40 +268,17 @@
             <p class="mb-0"><em>Final Project Presentation (End of Week 8):</em></p>
             <p>
               Participants present their campaign results and key learnings Evaluation and feedback from instructors
-            </p>
-            <!-- <p class="mb-0"><em>Support and Community:</em></p>
-            <p>Private Facebook group or Slack channel for participants
-              Continuous support from instructors and peers
-            </p> -->
+            </p> 
           </div>
-          <h5 class="ms-1 link-warning">Join us on this journey to master Meta Ads and transform your advertising strategy. <p onclick="scrollto('#contact')">let’s get started!</p></h5>
+          
+          <div class="d-flex align-items-center">
+            <h5 class="ms-1 link-warning">Join us on this journey to master Meta Ads and transform your advertising strategy.</h5>
+            <div id="navbar"><a href="#contact" onclick="setActive()" class="nav-link link-info p-0 px-2 mb-1">Let’s get started!</a></div>
+          </div>
+           
         </div>
         <div class="col-lg-1">
-          <!-- <h3 class="resume-title">Topics</h3>
-          <div class="resume-item">
-            <h4>Starting Material</h4> 
-            <p><em>Experion, New York, NY </em></p>
-            <p>
-            <ul>
-              <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-              <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-              <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-              <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-            </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Final Outcome</h4> 
-            <p><em>Stepping Stone Advertising, New York, NY</em></p>
-            <p>
-            <ul>
-              <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-              <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-              <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-              <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-            </ul>
-            </p>
-          </div> -->
+          
         </div>
       </div>
 
@@ -497,52 +388,69 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="flex-direction: column;">
           <div class="icon-box"> 
             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27c3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10c5.35 0 9.25-3.67 9.25-9.09c0-1.15-.15-1.81-.15-1.81Z"/></svg></div>
             <h4><a href="">Google Ads</a></h4>
             <p>Drive More Traffic, Leads, and Sales with Our Expert Google Ads Management Services!</p>
           </div>
+          <div id="navbar"> 
+            <a href="#contact" onclick="setActive()" class="btn btn-success nav-link" style="color: white;">Let's Start</a> 
+          </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" style="flex-direction: column;">
           <div class="icon-box"> 
             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></div>
             <h4><a href="">Tiktok Ads</a></h4>
             <p>Make Your Mark on TikTok with Our Creative and Innovative Advertising Services!</p>
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-          <div class="icon-box"> 
-            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></div>
-            
-            <h4><a href="">Facebook Ads</a></h4>
-            <p>Take Your Facebook Advertising to the Next Level with Our Expert Services!</p>
+          <div id="navbar"> 
+            <a href="#contact" onclick="setActive()" class="btn btn-success nav-link" style="color: white;">Let's Start</a> 
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" style="flex-direction: column;">
+          <div class="icon-box"> 
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></div>
+            <h4><a href="">Facebook Ads</a></h4>
+            <p>Take Your Facebook Advertising to the Next Level with Our Expert Services!</p>
+          </div>
+          <div id="navbar"> 
+            <a href="#contact" onclick="setActive()" class="btn btn-success nav-link" style="color: white;">Let's Start</a> 
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" style="flex-direction: column;">
           <div class="icon-box"> 
             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/></svg></div>
             <h4><a href="">instagram Ads</a></h4>
             <p>Unleash the Power of Instagram Advertising with Our Proven Strategies!</p>
           </div>
+          <div id="navbar"> 
+            <a href="#contact" onclick="setActive()" class="btn btn-success nav-link" style="color: white;">Let's Start</a> 
+          </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" style="flex-direction: column;">
           <div class="icon-box">
             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M12.244 4c.534.003 1.87.016 3.29.073l.504.022c1.429.067 2.857.183 3.566.38c.945.266 1.687 1.04 1.938 2.022c.4 1.56.45 4.602.456 5.339l.001.152v.174c-.007.737-.057 3.78-.457 5.339c-.254.985-.997 1.76-1.938 2.022c-.709.197-2.137.313-3.566.38l-.504.023c-1.42.056-2.756.07-3.29.072l-.235.001h-.255c-1.13-.007-5.856-.058-7.36-.476c-.944-.266-1.687-1.04-1.938-2.022c-.4-1.56-.45-4.602-.456-5.339v-.326c.006-.737.056-3.78.456-5.339c.254-.985.997-1.76 1.939-2.021c1.503-.419 6.23-.47 7.36-.476h.489ZM9.999 8.5v7l6-3.5l-6-3.5Z"/></svg></div>
             <h4><a href="">Youtube Ads</a></h4>
             <p>Unlock the Full Potential of YouTube Advertising with Our Customized Solutions!</p>
           </div>
+          <div id="navbar"> 
+            <a href="#contact" onclick="setActive()" class="btn btn-success nav-link" style="color: white;">Let's Start</a> 
+          </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" style="flex-direction: column;">
           <div class="icon-box">
             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="currentColor" d="M9.41 16.59L8 18l-6-6l6-6l1.41 1.41L4.83 12l4.58 4.59zm5.18-9.18L16 6l6 6l-6 6l-1.41-1.41L19.17 12l-4.58-4.59z"/></svg></div>
             <h4><a href="">Web / App Development</a></h4>
             <p>Now providing Full Stack Website and Mobile Application solutions!</p>
+          </div>
+          <div id="navbar"> 
+            <a href="#contact" onclick="setActive()" class="btn btn-success nav-link" style="color: white;">Let's Start</a> 
           </div>
         </div>
 
@@ -831,7 +739,8 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Contact us</h2> 
+        <h2>Contact us</h2>
+        <!-- <p>Contact Me</p> -->
       </div>
 
       <form action="#" method="post" role="form" class="php-email-form mt-4">
@@ -919,7 +828,7 @@
   <script src="/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="/js/main.js"></script> 
+  <script src="/js/main.js"></script>
 
 </body>
 

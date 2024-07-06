@@ -58,6 +58,11 @@
    */
   on('click', '#navbar .nav-link', function(e) {
     let section = select(this.hash)
+    if(this.hash == '#contact'){
+      setActive('active');
+    } else {
+      setActive('nav-link');
+    }
     if (section) {
       e.preventDefault()
 
@@ -245,3 +250,7 @@
   });
 
 })()
+
+function setActive(param){
+  document.getElementById('nav-link-contact').className = param;
+}

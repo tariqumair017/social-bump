@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 //Requring Routes  
 const indexRoutes   = require("./routes/index");
 
-// mongoose.connect("mongodb://127.0.0.1:27017/h_wallet", {useNewUrlParser: true , useUnifiedTopology: true}); 
+// mongoose.connect("mongodb://127.0.0.1:27017/socialbump", {useNewUrlParser: true , useUnifiedTopology: true}); 
 // const db = mongoose.connection;
 // db.on("error", console.error.bind(console, "connection error:"));
 // db.once("open", () => {console.log("Database Connected");});

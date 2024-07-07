@@ -1032,6 +1032,9 @@ section .container {
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
   }
+  .wsButton {
+    right: 20px !important; 
+  }
 }
 .credits a {
   color: #18d26e;

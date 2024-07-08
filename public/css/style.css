@@ -168,6 +168,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 48px;
     width: 52px;
   }
+  .tagLine-mobile {
+    color: #efc016; font-weight: 700;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -575,6 +578,27 @@ section .container {
   color: #18d26e;
   margin-bottom: 10px;
 }
+
+.resume .resume-start {
+  padding: 7px 0 20px 20px;
+  margin-top: -2px; 
+  position: relative;
+}
+
+.resume .resume-start p {
+  line-height: 20px;
+  font-size: 14px;
+  /* font-weight: 600; */
+  /* text-transform: math-auto; */
+  /* font-family: "Poppins", sans-serif;  */
+  margin-bottom: 2px;
+} 
+
+.link-info {
+  display: contents !important;
+  font-size: 16px;
+}
+
 .resume .resume-item h5 {
   font-size: 16px;
   background: rgba(255, 255, 255, 0.15);
